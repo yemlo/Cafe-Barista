@@ -57,3 +57,48 @@ footer .marca { font-size: 20px; }
 footer p, footer > a:last-child { margin: 0; font-size: 10px; }
 .saltar { position: absolute; top: -80px; left: 10px; z-index: 5; padding: 10px; background: white; }
 .saltar:focus { top: 10px; }
+
+/* Mejora visual 2: tarjetas, cuadrículas adaptables y navegación accesible. */
+.productos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.producto { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--linea); border-radius: 7px; background: var(--papel); transition: transform 180ms ease, box-shadow 180ms ease; }
+.producto p { flex: 1; }
+.producto:hover { transform: translateY(-5px); box-shadow: 0 12px 24px #23483b10; }
+.ofertas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.oferta { display: flex; flex-direction: column; margin-bottom: 0; }
+.oferta p { flex: 1; }
+.visitanos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 70px; }
+.visitanos section { margin: 0; }
+nav a { padding: 8px 0; border-bottom: 1px solid transparent; transition: border-color 180ms ease; }
+nav a:hover { border-color: var(--terracota); }
+.boton:hover { background: #32624d; }
+a:focus-visible { outline: 3px solid var(--terracota); outline-offset: 5px; }
+
+@media (max-width: 850px) {
+    .cabecera { align-items: flex-start; }
+    nav { gap: 14px; }
+    .portada { gap: 28px; }
+    .ilustracion { min-height: 340px; }
+    .plato { width: 200px; height: 200px; }
+    .sello { right: 2px; top: 12px; }
+    .productos { gap: 14px; }
+    .producto { padding: 22px; }
+    .visitanos { gap: 35px; }
+}
+
+@media (max-width: 650px) {
+    .cabecera { flex-direction: column; gap: 18px; }
+    nav { width: 100%; justify-content: space-between; gap: 10px; }
+    .portada { flex-direction: column; align-items: stretch; min-height: auto; padding: 42px 0; }
+    h1 { letter-spacing: -1.8px; }
+    .ilustracion { flex-basis: auto; width: 100%; max-width: 420px; margin: 16px auto 0; }
+    .productos, .ofertas, .visitanos { grid-template-columns: 1fr; }
+    .seccion { padding: 38px 0; }
+    .visitanos { gap: 40px; padding: 40px 0; }
+    footer { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .producto, nav a { transition: none; }
+    .producto:hover { transform: none; }
+}
