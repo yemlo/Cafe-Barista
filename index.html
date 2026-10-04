@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cafe Barista: café, productos, horarios y contacto.">
+    <title>Cafe Barista | Café y buenos momentos</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header class="cabecera">
+        <a class="marca" href="#inicio">Cafe Barista<span>Café y buenos momentos</span></a>
+        <nav aria-label="Navegación principal">
+            <a href="#productos">Productos</a>
+            <a href="#horarios">Horarios</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <main id="contenido">
+        <section class="portada" id="inicio" aria-labelledby="titulo">
+            <div class="portada-texto">
+                <p class="etiqueta">HECHO CON CALMA. SERVIDO CON CARIÑO.</p>
+                <h1 id="titulo">Tu pausa favorita<br>empieza con café.</h1>
+                <p>Café recién preparado, algo dulce y un lugar para disfrutar los pequeños momentos del día.</p>
+                <a class="boton" href="#productos">Descubre nuestro menú <span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="ilustracion" aria-hidden="true">
+                <span class="sello">UNA BUENA TAZA<br>UN BUEN DÍA</span>
+                <div class="plato"><div class="taza"><span class="cafe"></span></div></div>
+                <span class="nota">Tu próximo buen momento.</span>
+            </div>
+        </section>
+
+        <section class="seccion" id="productos" aria-labelledby="titulo-productos">
+            <p class="etiqueta">NUESTROS FAVORITOS</p>
+            <h2 id="titulo-productos">Una taza para cada antojo.</h2>
+            <div class="productos">
+                <article class="producto">
+                    <span class="numero">01 / INTENSO</span>
+                    <h3>Espresso</h3>
+                    <p>Corto, aromático y lleno de carácter. La esencia del café en una taza.</p>
+                    <span class="precio">Q18.00</span>
+                </article>
+                <article class="producto">
+                    <span class="numero">02 / EQUILIBRADO</span>
+                    <h3>Cappuccino</h3>
+                    <p>Espresso, leche caliente y una suave capa de espuma. Un clásico para disfrutar.</p>
+                    <span class="precio">Q24.00</span>
+                </article>
+                <article class="producto">
+                    <span class="numero">03 / SUAVE</span>
+                    <h3>Latte de vainilla</h3>
+                    <p>Café con leche cremosa y un toque de vainilla para acompañar tu día.</p>
+                    <span class="precio">Q28.00</span>
+                </article>
+            </div>
+        </section>
+
+        <div class="visitanos">
+            <section id="horarios" aria-labelledby="titulo-horarios">
+                <p class="etiqueta">HAZ UNA PAUSA</p>
+                <h2 id="titulo-horarios">Te esperamos.</h2>
+                <dl class="horarios">
+                    <div><dt>Lunes a viernes</dt><dd>7:00 a. m. - 8:00 p. m.</dd></div>
+                    <div><dt>Sábado</dt><dd>8:00 a. m. - 8:00 p. m.</dd></div>
+                    <div><dt>Domingo</dt><dd>8:00 a. m. - 5:00 p. m.</dd></div>
+                </dl>
+            </section>
+            <section id="contacto" aria-labelledby="titulo-contacto">
+                <p class="etiqueta">CONVERSEMOS</p>
+                <h2 id="titulo-contacto">Siempre cerca.</h2>
+                <address>
+                    Antigua Guatemala, Guatemala<br>
+                    Correo: hola@cafebarista.example<br>
+                    Teléfono de muestra: +502 5555 0100
+                </address>
+                <p class="aclaracion">Información de contacto de ejemplo para esta práctica académica.</p>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <a class="marca" href="#inicio">Cafe Barista</a>
+        <p>Proyecto académico. Productos, precios y horarios ilustrativos.</p>
+        <a href="#inicio">Volver arriba ↑</a>
+    </footer>
+</body>
+</html>
