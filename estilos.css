@@ -1,33 +1,104 @@
-/* Versión inicial: estructura legible para productos, horarios y contacto. */
+/* Mejora visual 1: identidad de marca, tipografía y portada ilustrada. */
+:root {
+    --crema: #f5f0e6;
+    --papel: #fffcf6;
+    --verde: #23483b;
+    --tinta: #263c32;
+    --terracota: #9f4d30;
+    --suave: #5d695c;
+    --linea: #d9ddcf;
+}
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; color: #2c2926; background: #fff; font-family: Arial, sans-serif; line-height: 1.6; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; color: var(--tinta); background: var(--crema); font-family: Arial, Helvetica, sans-serif; line-height: 1.7; }
 a { color: inherit; }
-.cabecera, main, footer { max-width: 1100px; margin: auto; padding: 24px; }
-.cabecera { border-bottom: 1px solid #ddd; }
-.marca { display: inline-block; font-size: 24px; font-weight: bold; text-decoration: none; }
-.marca span { display: block; font-size: 12px; font-weight: normal; }
-nav { margin-top: 16px; }
-nav a { margin-right: 20px; }
-.portada, .seccion, .visitanos { padding: 40px 0; }
-h1 { font-size: 42px; line-height: 1.15; }
-h2 { font-size: 30px; }
-h3 { font-size: 24px; }
-.etiqueta, .numero { font-size: 12px; font-weight: bold; letter-spacing: 1px; }
-.boton { display: inline-block; padding: 12px 20px; background: #333; color: white; text-decoration: none; }
-.ilustracion { display: none; }
-.producto { padding: 20px 0; border-bottom: 1px solid #ddd; }
-.precio { font-size: 22px; font-weight: bold; }
-.horarios div { margin-bottom: 12px; }
-.horarios dt { font-weight: bold; }
+.cabecera, main, footer { max-width: 1240px; margin: auto; padding-left: 6%; padding-right: 6%; }
+.cabecera { display: flex; justify-content: space-between; align-items: center; gap: 28px; padding-top: 24px; padding-bottom: 24px; border-bottom: 1px solid var(--linea); }
+.marca { font: bold 30px/1.1 Georgia, serif; text-decoration: none; letter-spacing: -1px; }
+.marca span { display: block; margin-top: 8px; font: 10px/1.4 Arial, sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+nav { display: flex; gap: 26px; flex-wrap: wrap; }
+nav a { font-size: 13px; text-decoration: none; }
+.portada { display: flex; align-items: center; gap: 40px; min-height: 570px; padding: 56px 0; }
+.portada-texto { flex: 1; }
+.etiqueta, .numero { font: bold 10px/1.7 Arial, sans-serif; letter-spacing: 1.8px; color: var(--terracota); }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; font-weight: normal; }
+h1 { font-size: clamp(42px, 5vw, 65px); line-height: 1.07; letter-spacing: -2.7px; margin: 22px 0; }
+h2 { font-size: clamp(30px, 3.4vw, 44px); line-height: 1.15; letter-spacing: -1.5px; margin-bottom: 30px; }
+h3 { font-size: 28px; line-height: 1.2; margin: 14px 0; }
+.portada-texto > p:not(.etiqueta) { max-width: 400px; font-size: 15px; color: var(--suave); }
+.boton { display: inline-flex; gap: 28px; align-items: center; margin-top: 18px; padding: 14px 22px; color: var(--papel); background: var(--verde); border-radius: 4px; font-size: 13px; font-weight: bold; text-decoration: none; }
+.boton span { font-size: 22px; }
+.ilustracion { position: relative; display: grid; place-items: center; flex: 0 0 42%; min-height: 400px; background: #e2e6d9; border-radius: 160px 160px 14px 14px; }
+.sello { position: absolute; right: 10px; top: 32px; z-index: 1; transform: rotate(12deg); padding: 14px; border: 1px solid var(--verde); border-radius: 50%; text-align: center; font: bold 9px/1.6 Arial, sans-serif; letter-spacing: 1.3px; }
+.plato { display: grid; place-items: center; width: 250px; height: 250px; border-radius: 50%; background: linear-gradient(145deg,#fcfcf1,#d9dccf); box-shadow: 14px 22px 32px #1e382228, inset 0 0 0 14px #eff0e2; transform: rotate(-18deg); }
+.taza { position: relative; width: 168px; height: 168px; padding: 12px; background: #fefdf5; border-radius: 50%; box-shadow: 8px 10px 12px #4147362e; }
+.taza::after { content: ''; position: absolute; right: -36px; top: 61px; width: 48px; height: 45px; border: 12px solid #f7f7ea; border-left: 0; border-radius: 0 20px 20px 0; }
+.cafe { display: block; width: 100%; height: 100%; border-radius: 50%; background: radial-gradient(ellipse at 40% 30%,#d5a26a 0 6%,#ad6c34 25%,#59311d 80%); box-shadow: inset 0 0 0 6px #b78a57; }
+.cafe::after { content: ''; display: block; width: 55px; height: 70px; position: relative; top: 26px; left: 43px; background: #f7e8cc; border-radius: 80% 0 70% 45%; transform: rotate(45deg); box-shadow: 10px 12px 0 -5px #c58a4f; }
+.nota { position: absolute; bottom: 24px; font: italic 16px Georgia, serif; }
+.seccion { padding: 54px 0; border-top: 1px solid var(--linea); }
+.producto { padding: 26px 0; border-bottom: 1px solid var(--linea); }
+.producto p { color: var(--suave); font-size: 14px; max-width: 430px; }
+.precio { font: 27px Georgia, serif; }
+.promociones { margin-top: 24px; }
+.oferta { padding: 28px; background: var(--verde); color: var(--papel); margin-bottom: 16px; border-radius: 7px; }
+.oferta .numero { color: #e4c493; }
+.oferta p { font-size: 14px; max-width: 600px; }
+.condiciones { margin-top: 20px; font-size: 11px; color: var(--suave); }
+.visitanos { padding: 54px 0 70px; border-top: 1px solid var(--linea); }
+.visitanos section { margin-bottom: 40px; }
+.horarios div { display: flex; justify-content: space-between; gap: 24px; max-width: 430px; padding: 10px 0; border-bottom: 1px solid var(--linea); font-size: 13px; }
 .horarios dd { margin: 0; }
-address { font-style: normal; }
-.aclaracion, footer { font-size: 13px; }
-footer { border-top: 1px solid #ddd; }
-.saltar { position: absolute; top: -80px; left: 10px; padding: 10px; background: white; }
+address { font-style: normal; font-size: 15px; line-height: 2; }
+.aclaracion { max-width: 390px; margin-top: 18px; color: var(--suave); font-size: 11px; }
+footer { display: flex; justify-content: space-between; align-items: center; gap: 24px; padding-top: 24px; padding-bottom: 24px; border-top: 1px solid var(--linea); }
+footer .marca { font-size: 20px; }
+footer p, footer > a:last-child { margin: 0; font-size: 10px; }
+.saltar { position: absolute; top: -80px; left: 10px; z-index: 5; padding: 10px; background: white; }
 .saltar:focus { top: 10px; }
 
-/* Promociones: primer cambio de la rama promociones. */
-.promociones { border-top: 1px solid #ddd; }
-.oferta { padding: 24px; background: #f5f0e8; margin-bottom: 16px; }
-.condiciones { font-size: 13px; color: #555; }
+/* Mejora visual 2: tarjetas, cuadrículas adaptables y navegación accesible. */
+.productos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+.producto { display: flex; flex-direction: column; padding: 28px; border: 1px solid var(--linea); border-radius: 7px; background: var(--papel); transition: transform 180ms ease, box-shadow 180ms ease; }
+.producto p { flex: 1; }
+.producto:hover { transform: translateY(-5px); box-shadow: 0 12px 24px #23483b10; }
+.ofertas { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+.oferta { display: flex; flex-direction: column; margin-bottom: 0; }
+.oferta p { flex: 1; }
+.visitanos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 70px; }
+.visitanos section { margin: 0; }
+nav a { padding: 8px 0; border-bottom: 1px solid transparent; transition: border-color 180ms ease; }
+nav a:hover { border-color: var(--terracota); }
+.boton:hover { background: #32624d; }
+a:focus-visible { outline: 3px solid var(--terracota); outline-offset: 5px; }
+
+@media (max-width: 850px) {
+    .cabecera { align-items: flex-start; }
+    nav { gap: 14px; }
+    .portada { gap: 28px; }
+    .ilustracion { min-height: 340px; }
+    .plato { width: 200px; height: 200px; }
+    .sello { right: 2px; top: 12px; }
+    .productos { gap: 14px; }
+    .producto { padding: 22px; }
+    .visitanos { gap: 35px; }
+}
+
+@media (max-width: 650px) {
+    .cabecera { flex-direction: column; gap: 18px; }
+    nav { width: 100%; justify-content: space-between; gap: 10px; }
+    .portada { flex-direction: column; align-items: stretch; min-height: auto; padding: 42px 0; }
+    h1 { letter-spacing: -1.8px; }
+    .ilustracion { flex-basis: auto; width: 100%; max-width: 420px; margin: 16px auto 0; }
+    .productos, .ofertas, .visitanos { grid-template-columns: 1fr; }
+    .seccion { padding: 38px 0; }
+    .visitanos { gap: 40px; padding: 40px 0; }
+    footer { flex-direction: column; align-items: flex-start; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .producto, nav a { transition: none; }
+    .producto:hover { transform: none; }
+}
