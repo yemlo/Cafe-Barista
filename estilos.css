@@ -30,3 +30,4 @@ footer { border-top: 1px solid #ddd; }
 /* Promociones: primer cambio de la rama promociones. */
 .promociones { border-top: 1px solid #ddd; }
 .oferta { padding: 24px; background: #f5f0e8; margin-bottom: 16px; }
+.condiciones { font-size: 13px; color: #555; }
